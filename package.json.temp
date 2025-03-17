@@ -1,0 +1,27 @@
+{
+  "name": "node-development-environment",
+  "version": "1.0.0",
+  "description": "Environnement de développement Node.js avec React",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack serve --config webpack.dev.js",
+    "prod": "npm run test && webpack --config webpack.prod.js",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix",
+    "test": "jest --coverage",
+    "doc": "jsdoc -c jsdoc.conf.json",
+    "prepare": "husky install",
+    "commit": "cz"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

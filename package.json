@@ -9,7 +9,11 @@
     "dev": "webpack serve --config webpack.dev.js",
     "prod": "npm run test && webpack --config webpack.prod.js",
     "lint": "eslint src/**/*.{js,jsx}",
-    "doc": "jsdoc -c jsdoc.conf.json"
+    "lint:fix": "eslint src/**/*.{js,jsx} --fix",
+    "stylelint": "stylelint src/**/*.scss",
+    "stylelint:fix": "stylelint src/**/*.scss --fix",
+    "doc": "jsdoc -c jsdoc.conf.json",
+    "commit": "cz"
   },
   "keywords": [],
   "author": "",
@@ -60,5 +64,14 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "jest --bail --findRelatedTests"
+    ],
+    "*.scss": [
+      "stylelint --fix"
+    ]
   }
 }

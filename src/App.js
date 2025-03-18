@@ -1,5 +1,5 @@
-import React from "react";
-import "./styles/main.scss";
+import React from 'react';
+import './styles/main.scss';
 
 /**
  * Composant principal de l\'application
@@ -10,7 +10,10 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>Hello React App</h1>
-        <p>Environment: {process.env.NODE_ENV}</p>
+        <p>
+          Environment:
+          {process.env.NODE_ENV}
+        </p>
       </header>
     </div>
   );

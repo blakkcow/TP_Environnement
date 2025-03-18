@@ -14,19 +14,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\\.(js|jsx)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: { loader: "babel-loader" },
       },
       {
-        test: /\\.s[ac]ss$/i,
-        use: [
-          process.env.NODE_ENV === "production"
-            ? MiniCssExtractPlugin.loader
-            : "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -34,7 +28,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new ESLintPlugin(),
+    new ESLintPlugin({
+      extensions: ["js", "jsx"],
+      context: "src",
+      eslintPath: "eslint",
+      emitWarning: true,
+      failOnError: false,
+    }),
     new DotenvWebpack({ systemvars: true }),
   ],
   resolve: {

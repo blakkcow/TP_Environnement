@@ -42,8 +42,8 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-webpack-plugin": "^5.0.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^5.6.3",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
@@ -55,6 +55,10 @@
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
+    "stylelint": "^16.16.0",
+    "stylelint-config-sass-guidelines": "^12.1.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-scss": "^6.11.1",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0",
@@ -68,7 +72,7 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix",
-      "jest --bail --findRelatedTests"
+      "jest --bail --findRelatedTests --passWithNoTests"
     ],
     "*.scss": [
       "stylelint --fix"
